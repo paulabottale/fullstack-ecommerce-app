@@ -18,17 +18,16 @@ const Home = () => {
 
   const fetchingProducts = async () => {
     try {
-      const response = await fetch("http://localhost:1234/api/products")
+      /*const response = await fetch("http://localhost:1234/api/products")
 
       if (!response.ok) {
         setError("Sesión terminada, vuelve a loguearte.")
         logout()
-        // continuar controlando el home como ruta privada
         throw new Error("Falló el fetch :(")
       }
-      const dataProducts = await response.json()
+      const dataProducts = await response.json()*/
 
-      setProducts(dataProducts.data)
+      setProducts(productosPrueba)
     } catch (error) {
       setError(error.message)
     }
