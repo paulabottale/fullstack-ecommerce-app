@@ -3,7 +3,7 @@ import { Layout } from "../../components/Layout"
 import { Link } from "react-router-dom"
 import { useAuth } from "../../context/AuthContext"
 import { FormUpdate } from "../../components/FormUpdate"
-import { productosPrueba } from "./productos.json"
+import productosPrueba from "../../productos.json"
 
 const Home = () => {
   const [products, setProducts] = useState([])
