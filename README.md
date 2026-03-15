@@ -1,108 +1,26 @@
+# 🛒 E-Commerce Full Stack - Demo Mode
 
-# 🔍 TP Complementario – Búsqueda de Productos por Nombre
+Este proyecto es una plataforma de comercio electrónico desarrollada como trabajo final. Cuenta con una arquitectura desacoplada (Frontend en React y Backend en Node/Express), diseñada para ofrecer una experiencia de usuario fluida y una gestión administrativa eficiente.
 
-Este proyecto extiende una aplicación CRUD con MongoDB agregando una **funcionalidad de búsqueda de productos por nombre**, permitiendo a los usuarios encontrar productos mediante coincidencias parciales desde el frontend.
+> **Nota para Reclutadores:** Actualmente, la versión desplegada en Vercel utiliza un **Mock API (JSON local)** para el catálogo de productos. Esto permite una visualización rápida de la interfaz y la lógica de componentes sin depender de un servidor externo activo. El código base está totalmente preparado para la integración Full Stack.
 
----
+## 🚀 Demo
+[Ver Proyecto en Vivo](https://e-commerce-para-usuarios-y-administ.vercel.app/)
 
-## 🧠 Descripción de la mejora
+## ✨ Funcionalidades Destacadas
+- **Arquitectura de Componentes:** Desarrollo modular utilizando React y Vite.
+- **Gestión de Estado:** Manejo dinámico de productos y estados de carga.
+- **Diseño Responsive:** Interfaz adaptada para dispositivos móviles y escritorio.
+- **Lógica de Negocio:** Sistema preparado para autenticación de usuarios y administración de inventario.
 
-Se implementó:
+## 🛠️ Stack Tecnológico
+- **Frontend:** React, React Router, CSS/SASS, Vite.
+- **Backend (Código disponible):** Node.js, Express, Base de Datos (SQL/NoSQL según corresponda).
+- **Despliegue:** Vercel.
 
-- Un **input de búsqueda en el frontend** que permite buscar productos por nombre.
-- Una **ruta nueva en el backend** que recibe el término buscado y devuelve coincidencias desde la base de datos.
-- Visualización dinámica de resultados en el frontend.
-- Búsqueda **parcial** e **insensible a mayúsculas/minúsculas**.
-
----
-
-## 🛠️ Tecnologías utilizadas
-
-- **Frontend:** Vite + React
-- **Backend:** Node.js + Express
-- **Base de datos:** MongoDB con Mongoose
-- **Validación:** Zod
-- **Autenticación:** JSON Web Token (JWT)
-- **Variables de entorno:** dotenv
+## 📈 Desafíos Técnicos Resueltos
+Uno de los mayores retos fue asegurar la persistencia de los datos y la navegación segura entre las vistas de usuario y administrador. Implementé un sistema de rutas protegidas y una estructura de carpetas que facilita la escalabilidad del proyecto.
 
 ---
-
-## 🚀 Instrucciones para ejecutar el proyecto
-
-### ejecutar el backend
-
-```bash
-cd backend
-npm install
-npm run dev
-
-Variables necesarias en backend/.env:
-PORT=
-MONGO_URI=
-JWT_SECRET=
-
-### ejecutar el frontend
-
-```bash
-cd frontend
-npm install
-npm run dev
-
-Variables necesarias en frontend/.env:
-VITE_BACKEND_URL=http://localhost:3000
-
-🔎 Ejemplo de uso de la búsqueda
-Ingresar un texto parcial o completo en el input de búsqueda (por ejemplo: tablet).
-
-El frontend envía una request GET a:
-
-bash
-http://localhost:1234/api/search?search=laptop
-
-El backend busca productos con coincidencias usando una expresión regular:
-
-js
-title: { $regex: nombre, $options: "i" }
-
-Los productos coincidentes se muestran automáticamente en pantalla.
-
-🗂️ Estructura del proyecto
-
-backend/
-├── src/
-    ├── config/
-    ├── validator/
-    ├── controllers/
-    ├── models/
-    ├── routes/
-    ├── middleware/
-    └── index.ts
-├── .env
-
-frontend/
-├── src/
-│   ├── assets/
-│   ├── components/
-    ├── context/
-│   ├── router/
-│   ├── views/
-│   ├── main.jsx
-    ├── styles.css
-
-
-✅ Buenas prácticas aplicadas
-Separación de responsabilidades: modelos, rutas y controladores.
-
-Uso de variables de entorno para proteger datos sensibles.
-
-Manejo de errores y status HTTP adecuados.
-
-Validación de datos con Zod.
-
-Seguridad con JWT.
-
-Frontend y backend conectados correctamente.
-
-🧪 Autor
-Paula Bottale
+Desarrollado por **Paula Bottale**
 
