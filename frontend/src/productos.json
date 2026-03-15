@@ -1,0 +1,5 @@
+[
+  { "id": 1, "name": "Auriculares Pro", "price": 1500, "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500" },
+  { "id": 2, "name": "Teclado Mecánico", "price": 3000, "image": "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=500" },
+  { "id": 3, "name": "Mouse Gamer", "price": 800, "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500" }
+]

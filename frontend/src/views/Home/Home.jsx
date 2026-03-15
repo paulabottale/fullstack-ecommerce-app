@@ -3,6 +3,7 @@ import { Layout } from "../../components/Layout"
 import { Link } from "react-router-dom"
 import { useAuth } from "../../context/AuthContext"
 import { FormUpdate } from "../../components/FormUpdate"
+import { productosPrueba } from "./productos.json"
 
 const Home = () => {
   const [products, setProducts] = useState([])
@@ -41,13 +42,10 @@ const Home = () => {
   useEffect(() => {
     if (search === "") return;
   const handleSearch = async () => {
-      try {
+      /*try {
         const res = await fetch(`http://localhost:1234/api/products/search?search=${encodeURIComponent(search)}`);
-        const data = await res.json();
-        setProducts(data.data || []);
-      } catch (error) {
-        console.error("Error al buscar productos", error);
-      }
+        const data = await res.json();*/
+        setProducts(productosPrueba);
     };
 
     handleSearch();
