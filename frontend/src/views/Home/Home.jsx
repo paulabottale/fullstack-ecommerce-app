@@ -16,10 +16,6 @@ const Home = () => {
 
   const { user, logout, token } = useAuth()
 
-  const productosFiltrados = productosPrueba.filter(p => 
-  p.name.toLowerCase().includes(search.toLowerCase())
-);
-setProducts(productosFiltrados);
 
   const fetchingProducts = async () => {
     try {
@@ -55,6 +51,20 @@ setProducts(productosFiltrados);
     handleSearch();
   }, [search]);
 
+useEffect(() => {
+  const handleSearch = () => {
+    if (search === "") {
+      setProducts(productosPrueba);
+    } else {
+      const filtrados = productosPrueba.filter(p =>
+        p.name.toLowerCase().includes(search.toLowerCase())
+      );
+      setProducts(filtrados);
+    }
+  };
+
+  handleSearch();
+}, [search]); // Se ejecuta cada vez que escribes en la barrita
 
 
   const handleDelete = async (product) => {
