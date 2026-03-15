@@ -1,5 +1,14 @@
 [
-  { "id": 1, "name": "Auriculares Pro", "price": 1500, "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500" },
-  { "id": 2, "name": "Teclado Mecánico", "price": 3000, "image": "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=500" },
-  { "id": 3, "name": "Mouse Gamer", "price": 800, "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500" }
+  { "id": 1, "name": "Auriculares Pro", "price": 1500},
+  { "id": 2, "name": "Teclado Mecánico", "price": 3000},
+  { "id": 3, "name": "Mouse Gamer", "price": 800},
+  { "id": 1, "name": "Auriculares Pro Wireless", "price": 1500 },
+  { "id": 2, "name": "Teclado Mecánico RGB", "price": 3000 },
+  { "id": 3, "name": "Mouse Gamer Ergonómico", "price": 800 },
+  { "id": 4, "name": "Monitor 24' Full HD", "price": 12500 },
+  { "id": 5, "name": "Cámara Web 1080p", "price": 4200 },
+  { "id": 6, "name": "Silla Gamer Premium", "price": 25000 },
+  { "id": 7, "name": "Micrófono para Streaming", "price": 6700 },
+  { "id": 8, "name": "Pad Mouse XL", "price": 1200 },
+  { "id": 9, "name": "Soporte para Laptop", "price": 2300 }
 ]
