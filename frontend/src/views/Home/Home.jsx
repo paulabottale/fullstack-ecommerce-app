@@ -16,6 +16,11 @@ const Home = () => {
 
   const { user, logout, token } = useAuth()
 
+  const productosFiltrados = productosPrueba.filter(p => 
+  p.name.toLowerCase().includes(search.toLowerCase())
+);
+setProducts(productosFiltrados);
+
   const fetchingProducts = async () => {
     try {
       /*const response = await fetch("http://localhost:1234/api/products")
