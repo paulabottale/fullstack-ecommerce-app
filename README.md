@@ -23,4 +23,3 @@ Uno de los mayores retos fue asegurar la persistencia de los datos y la navegaci
 
 ---
 Desarrollado por **Paula Bottale**
-
