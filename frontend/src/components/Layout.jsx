@@ -40,7 +40,7 @@ const Layout = ({ children }) => {
         {children}
       </main>
       <footer>
-        <p>Sitio creado por Paula Bottale</p>
+        <p>Sitio creado por Paula Bottale.</p>
       </footer>
     </>
   )
