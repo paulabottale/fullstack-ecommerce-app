@@ -1,25 +1,71 @@
-# 🛒 E-Commerce Full Stack - Demo Mode
+# 🛒 Full Stack E-Commerce Platform
 
-Este proyecto es una plataforma de comercio electrónico desarrollada como trabajo final. Cuenta con una arquitectura desacoplada (Frontend en React y Backend en Node/Express), diseñada para ofrecer una experiencia de usuario fluida y una gestión administrativa eficiente.
+This project is a full stack e-commerce application built with a decoupled architecture, featuring a React frontend and a Node.js/Express backend.
 
-> **Nota para Reclutadores:** Actualmente, la versión desplegada en Vercel utiliza un **Mock API (JSON local)** para el catálogo de productos. Esto permite una visualización rápida de la interfaz y la lógica de componentes sin depender de un servidor externo activo. El código base está totalmente preparado para la integración Full Stack.
-
-## 🚀 Demo
-[Ver Proyecto en Vivo](https://e-commerce-para-usuarios-y-administ.vercel.app/)
-
-## ✨ Funcionalidades Destacadas
-- **Arquitectura de Componentes:** Desarrollo modular utilizando React y Vite.
-- **Gestión de Estado:** Manejo dinámico de productos y estados de carga.
-- **Diseño Responsive:** Interfaz adaptada para dispositivos móviles y escritorio.
-- **Lógica de Negocio:** Sistema preparado para autenticación de usuarios y administración de inventario.
-
-## 🛠️ Stack Tecnológico
-- **Frontend:** React, React Router, CSS/SASS, Vite.
-- **Backend (Código disponible):** Node.js, Express, Base de Datos (SQL/NoSQL según corresponda).
-- **Despliegue:** Vercel.
-
-## 📈 Desafíos Técnicos Resueltos
-Uno de los mayores retos fue asegurar la persistencia de los datos y la navegación segura entre las vistas de usuario y administrador. Implementé un sistema de rutas protegidas y una estructura de carpetas que facilita la escalabilidad del proyecto.
+It is designed to simulate a real-world online store, including user interaction, product management, and scalable structure.
 
 ---
-Desarrollado por **Paula Bottale**
+
+## 🚀 Live Demo
+
+👉 View Live Project (Vercel)
+
+> ⚠️ **Note for recruiters:**  
+> The deployed version currently uses a mock API (local JSON) for product data.  
+> This allows fast UI rendering without relying on an active backend server.  
+> The project is fully structured and ready for full stack integration.
+
+---
+
+## ✨ Key Features
+
+- ⚛️ Component-based architecture using React + Vite  
+- 🔄 Dynamic state management for products and loading states  
+- 📱 Responsive design (mobile & desktop)  
+- 🔐 Scalable structure prepared for authentication and admin roles  
+- 🧩 Clean and modular code organization  
+
+---
+
+## 🛠️ Tech Stack
+
+**Frontend**
+- React
+- React Router
+- CSS / SASS
+- Vite
+
+**Backend (available in repository)**
+- Node.js
+- Express
+- Database (SQL / NoSQL)
+
+**Deployment**
+- Vercel
+
+---
+
+## 📈 Technical Challenges
+
+One of the main challenges was ensuring smooth navigation and data consistency across user and admin views.
+
+To solve this:
+- Implemented structured routing logic  
+- Designed a scalable folder architecture  
+- Prepared protected routes for future authentication  
+
+---
+
+## 🧠 What I Learned
+
+- Structuring a full stack application  
+- Managing frontend state effectively  
+- Designing scalable and maintainable code  
+- Thinking in terms of real-world product architecture  
+
+---
+
+## 👩‍💻 Author
+
+Developed by **Paula Bottale**  
+Full Stack Developer
