@@ -24,7 +24,7 @@ const Home = () => {
         throw new Error("Falló el fetch :(")
       }
       const dataProducts = await response.json()
-      setProducts(dataProducts)
+      setProducts(dataProducts.data)
     } catch (error) {
       setError(error.message)
     }
@@ -43,7 +43,7 @@ const Home = () => {
       try {
         const res = await fetch(`${API_URL}/api/products/search?search=${encodeURIComponent(search)}`)
         const data = await res.json()
-        setProducts(data)
+        setProducts(data.data)
       } catch (error) {
         setError(error.message)
       }
