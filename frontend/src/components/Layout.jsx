@@ -15,6 +15,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <header>
+        <span className="nav-brand">Storify</span>
         <nav>
           {
             user && (
