@@ -3,32 +3,28 @@ import { Layout } from "../../components/Layout"
 import { Link } from "react-router-dom"
 import { useAuth } from "../../context/AuthContext"
 import { FormUpdate } from "../../components/FormUpdate"
-import productosPrueba from "../../productos.json"
+
+const API_URL = import.meta.env.VITE_API_URL
 
 const Home = () => {
   const [products, setProducts] = useState([])
   const [error, setError] = useState(null)
   const [isEditing, setIsEditing] = useState(null)
   const [productEditing, setProductEditing] = useState(null)
-  const [search, setSearch] = useState("");
-
-
+  const [search, setSearch] = useState("")
 
   const { user, logout, token } = useAuth()
 
-
   const fetchingProducts = async () => {
     try {
-      /*const response = await fetch("http://localhost:1234/api/products")
-
+      const response = await fetch(`${API_URL}/api/products`)
       if (!response.ok) {
         setError("Sesión terminada, vuelve a loguearte.")
         logout()
         throw new Error("Falló el fetch :(")
       }
-      const dataProducts = await response.json()*/
-
-      setProducts(productosPrueba)
+      const dataProducts = await response.json()
+      setProducts(dataProducts)
     } catch (error) {
       setError(error.message)
     }
@@ -38,39 +34,27 @@ const Home = () => {
     fetchingProducts()
   }, [])
 
-
   useEffect(() => {
-    if (search === "") return;
-  const handleSearch = async () => {
-      /*try {
-        const res = await fetch(`http://localhost:1234/api/products/search?search=${encodeURIComponent(search)}`);
-        const data = await res.json();*/
-        setProducts(productosPrueba);
-    };
-
-    handleSearch();
-  }, [search]);
-
-useEffect(() => {
-  const handleSearch = () => {
     if (search === "") {
-      setProducts(productosPrueba);
-    } else {
-      const filtrados = productosPrueba.filter(p =>
-        p.name.toLowerCase().includes(search.toLowerCase())
-      );
-      setProducts(filtrados);
+      fetchingProducts()
+      return
     }
-  };
-
-  handleSearch();
-}, [search]); // Se ejecuta cada vez que escribes en la barrita
-
+    const handleSearch = async () => {
+      try {
+        const res = await fetch(`${API_URL}/api/products/search?search=${encodeURIComponent(search)}`)
+        const data = await res.json()
+        setProducts(data)
+      } catch (error) {
+        setError(error.message)
+      }
+    }
+    handleSearch()
+  }, [search])
 
   const handleDelete = async (product) => {
     if (confirm("Esta seguro que quieres borrar el producto?")) {
       try {
-        const response = await fetch(`http://localhost:1234/api/products/${product._id}`, {
+        const response = await fetch(`${API_URL}/api/products/${product._id}`, {
           method: "DELETE",
           headers: { Authorization: `Bearer ${token}` }
         })
@@ -88,7 +72,6 @@ useEffect(() => {
     setProductEditing(product)
   }
 
-
   const handleCancelEditing = () => {
     setIsEditing(null)
     setProductEditing(null)
@@ -99,19 +82,13 @@ useEffect(() => {
       <h1>Lista de productos</h1>
       {user && <p>Bienvenido, {user.email}</p>}
       <div className="search-conteiner">
-      <input className="search-input"
+        <input className="search-input"
           id="searchInput"
           type="text"
           placeholder="Buscar producto..."
           value={search || ""}
           onChange={(e) => setSearch(e.target.value || "")}
         />
-
-        <div id="results" style={{ marginTop: "20px" }}>
-          {products.map((product) => (
-            <div key={product._id}>{product.title}</div>
-          ))}
-        </div>
       </div>
       {error && <>
         <div className="error-home">
@@ -119,27 +96,19 @@ useEffect(() => {
           <Link to={"/login"}>Ir al login</Link>
         </div>
       </>}
-      {
-        isEditing && <FormUpdate product={productEditing} handleCancelEditing={handleCancelEditing} fetchingProducts={fetchingProducts} />
-      }
+      {isEditing && <FormUpdate product={productEditing} handleCancelEditing={handleCancelEditing} fetchingProducts={fetchingProducts} />}
       <section className="grid-products">
-        {
-          products.map((product) => {
-            return (
-              <div key={product._id}>
-                <h2>{product.name}</h2>
-                <p>${product.price}</p>
-                <p className="category-product">{product.category}</p>
-                {
-                  user && <div className="control-product">
-                    <button className="btn-update" onClick={() => { handleUpdate(product) }}>Actualizar</button>
-                    <button className="btn-delete" onClick={() => { handleDelete(product) }}>Borrar</button>
-                  </div>
-                }
-              </div>
-            )
-          })
-        }
+        {products.map((product) => (
+          <div key={product._id}>
+            <h2>{product.name}</h2>
+            <p>${product.price}</p>
+            <p className="category-product">{product.category}</p>
+            {user && <div className="control-product">
+              <button className="btn-update" onClick={() => handleUpdate(product)}>Actualizar</button>
+              <button className="btn-delete" onClick={() => handleDelete(product)}>Borrar</button>
+            </div>}
+          </div>
+        ))}
       </section>
     </Layout>
   )

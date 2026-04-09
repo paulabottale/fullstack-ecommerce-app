@@ -21,10 +21,7 @@ const FormUpdate = ({ product, handleCancelEditing, fetchingProducts }) => {
   const handleSubmit = async (e, product, token) => {
     e.preventDefault()
 
-    // Logica para actualizar un producto
-    // fetch al backend
-
-    const response = await fetch(`http://localhost:1234/api/products/${product._id}`, {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/products/${product._id}`, {
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${token}`,

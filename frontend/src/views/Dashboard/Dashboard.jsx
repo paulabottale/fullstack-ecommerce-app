@@ -42,11 +42,10 @@ const Dashboard = () => {
       setErrors(prev => [...prev, "¿Estas seguro que no quieres agregar la categoria?"])
     }
 
-    // Creación del nuevo producto
     const newDataProduct = { name, price, category }
 
     try {
-      const response = await fetch("http://localhost:1234/api/products", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/products`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
