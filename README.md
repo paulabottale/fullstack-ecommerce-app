@@ -1,29 +1,27 @@
 # 🛒 Full Stack E-Commerce Platform
 
-This project is a full stack e-commerce application built with a decoupled architecture, featuring a React frontend and a Node.js/Express backend.
-
-It is designed to simulate a real-world online store, including user interaction, product management, and scalable structure.
+A production-ready full stack e-commerce application built with a decoupled architecture, featuring a React frontend, a Node.js/Express REST API backend, and a MongoDB Atlas cloud database.
 
 ---
 
 ## 🚀 Live Demo
 
-👉 View Live Project (Vercel)
+👉 [View Live Project](https://e-commerce-para-usuarios-y-administ.vercel.app)
+🔗 [Backend API](https://api-restful-crud-jwt-login.onrender.com)
 
-> ⚠️ **Note for recruiters:**  
-> The deployed version currently uses a mock API (local JSON) for product data.  
-> This allows fast UI rendering without relying on an active backend server.  
-> The project is fully structured and ready for full stack integration.
+> ✅ Fully deployed — React frontend on Vercel, Node.js backend on Render, MongoDB Atlas database.
 
 ---
 
 ## ✨ Key Features
 
-- ⚛️ Component-based architecture using React + Vite  
-- 🔄 Dynamic state management for products and loading states  
-- 📱 Responsive design (mobile & desktop)  
-- 🔐 Scalable structure prepared for authentication and admin roles  
-- 🧩 Clean and modular code organization  
+- ⚛️ Component-based architecture using React + Vite
+- 🔐 JWT authentication with role-based access control (Admin / User)
+- 🛡️ Protected routes on both frontend and backend
+- 🔄 Full CRUD operations for product management
+- 📦 RESTful API with 10+ endpoints
+- 📱 Responsive design (mobile & desktop)
+- 🧩 Clean and modular code organization
 
 ---
 
@@ -35,37 +33,47 @@ It is designed to simulate a real-world online store, including user interaction
 - CSS / SASS
 - Vite
 
-**Backend (available in repository)**
+**Backend**
 - Node.js
 - Express
-- Database (SQL / NoSQL)
+- TypeScript
+- JWT Authentication
+- Zod (input validation)
+- bcrypt (password hashing)
+
+**Database**
+- MongoDB Atlas
+- Mongoose
 
 **Deployment**
-- Vercel
+- Frontend → Vercel
+- Backend → Render
+- Database → MongoDB Atlas
 
 ---
 
 ## 📈 Technical Challenges
 
-One of the main challenges was ensuring smooth navigation and data consistency across user and admin views.
+One of the main challenges was deploying a decoupled full stack application across multiple cloud platforms while keeping them in sync.
 
 To solve this:
-- Implemented structured routing logic  
-- Designed a scalable folder architecture  
-- Prepared protected routes for future authentication  
+- Migrated environment configuration to support production deployments on Render
+- Connected the React frontend to the live backend via environment variables
+- Configured MongoDB Atlas with proper network access and authentication for cloud connectivity
+- Implemented CORS to allow cross-origin requests between Vercel and Render
 
 ---
 
 ## 🧠 What I Learned
 
-- Structuring a full stack application  
-- Managing frontend state effectively  
-- Designing scalable and maintainable code  
-- Thinking in terms of real-world product architecture  
+- Architecting and deploying a full stack application across multiple cloud services
+- Implementing secure JWT authentication with role-based access control
+- Managing environment variables across development and production environments
+- Designing scalable REST APIs with TypeScript and Express
 
 ---
 
 ## 👩‍💻 Author
 
-Developed by **Paula Bottale**  
-Full Stack Developer
+Developed by **Paula Bottale** — Junior Full Stack Developer  
+[LinkedIn](https://linkedin.com/in/paula-bottale) · [GitHub](https://github.com/paulabottale)
