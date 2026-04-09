@@ -6,15 +6,8 @@ import cors from "cors"
 import dotenv from "dotenv";
 dotenv.config();
 
-
-
-
-process.loadEnvFile()
-
 const PORT = process.env.PORT || 3000
 const JWT_SECRET = process.env.JWT_SECRET
-
-
 
 const app = express()
 app.use(express.json())

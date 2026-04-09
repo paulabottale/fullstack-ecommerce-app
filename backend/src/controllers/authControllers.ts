@@ -4,8 +4,6 @@ import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken"
 import { validateUser } from "../validator/authValidator"
 
-process.loadEnvFile()
-
 const getUsers = async (req: Request, res: Response): Promise<any> => {
   try {
     const users = await Auth.find({}, { password: 0 })
@@ -98,3 +96,5 @@ const login = async (req: Request, res: Response): Promise<any> => {
 }
 
 export { getUsers, register, login }
+
+
